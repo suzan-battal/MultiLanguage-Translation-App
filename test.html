@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+
+<body>
+    <h1>Test Sonuçları</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        import { wordPairs } from './words.js';
+        import { TranslationService } from './TranslationService.js';
+
+        const service = new TranslationService();
+        const output = document.getElementById('output');
+
+        // Test 1
+        const result1 = service.translate("hello world", "English", "Turkish");
+        output.innerHTML += `<p><strong>Test 1:</strong> "hello world" (English → Turkish)<br>Sonuç: "${result1}"<br>Beklenen: "merhaba dünya"</p>`;
+
+        // Test 2  
+        const result2 = service.translate("merhaba dünya", "Turkish", "English");
+        output.innerHTML += `<p><strong>Test 2:</strong> "merhaba dünya" (Turkish → English)<br>Sonuç: "${result2}"<br>Beklenen: "hello world"</p>`;
+
+        // Sözlük kontrolü
+        output.innerHTML += `<p><strong>Sözlükte ilk kelime:</strong><br>`;
+        output.innerHTML += `english: ${wordPairs[0].english}<br>`;
+        output.innerHTML += `turkish: ${wordPairs[0].turkish}<br>`;
+        output.innerHTML += `arabic: ${wordPairs[0].arabic}</p>`;
+    </script>
+</body>
+
+</html>

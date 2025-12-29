@@ -18,6 +18,9 @@ export class TranslationService {
         const sourceLang = fromLang.toLowerCase();
         const targetLang = toLang.toLowerCase();
 
+        console.log("Translating:", input);
+        console.log("From:", sourceLang, "To:", targetLang);
+
         // Split text into words (handling punctuation simply for this demo)
         const words = input.split(/\s+/);
 
@@ -26,7 +29,9 @@ export class TranslationService {
             const cleanWord = word.toLowerCase().replace(/[.,!?;:]/g, "");
             const punctuation = word.slice(cleanWord.length) || word.match(/[.,!?;:]/g)?.join("") || "";
 
-            const pair = wordPairs.find(p => p[sourceLang].toLowerCase() === cleanWord);
+            const pair = wordPairs.find(p => p[sourceLang] && p[sourceLang].toLowerCase() === cleanWord);
+
+            console.log("Word:", cleanWord, "Found:", pair ? "YES" : "NO");
 
             if (pair) {
                 return pair[targetLang] + punctuation;
