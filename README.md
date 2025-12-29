@@ -123,40 +123,6 @@ UI herhangi bir iş mantığı içermez — basitçe `TranslationService` ile et
 - DevExpress
 - OOP (Models, Services, Interfaces)
 
-## 📁 Proje Yapısı
-
-```
-ntp/
-├── Models/
-│   └── WordPair.cs              # Model katmanı
-├── Services/
-│   ├── ITranslationService.cs   # Servis arayüzü
-│   └── TranslationService.cs    # Servis implementasyonu
-├── UI/
-│   └── Form1.cs                 # UI katmanı (WinForms)
-├── Program.cs                   # Giriş noktası (Console demo)
-└── README.md                    # Bu dosya
-```
-
-## 🚀 Nasıl Çalıştırılır
-
-### Console Demo
-`Program.cs` dosyası bir console demo içerir. Çalıştırmak için:
-
-```bash
-dotnet run
-```
-
-veya Visual Studio'da F5 tuşuna basın.
-
-### WinForms Uygulaması
-DevExpress form tasarımcısını kullanarak `Form1` için bir UI tasarlayın ve aşağıdaki kontrolleri ekleyin:
-- `txtInput` (TextBox veya MemoEdit)
-- `cmbFrom` (ComboBox veya LookUpEdit)
-- `cmbTo` (ComboBox veya LookUpEdit)
-- `btnTranslate` (Button veya SimpleButton)
-- `txtOutput` (TextBox veya MemoEdit)
-
 ## 🎯 Öğrenme Çıktıları
 
 - Katmanlı mimariyi anlama
@@ -171,16 +137,3 @@ DevExpress form tasarımcısını kullanarak `Form1` için bir UI tasarlayın ve
 - Yeni diller, model ve servis mantığını genişleterek eklenebilir.
 - Bilinmeyen kelimeler değişmeden kalır, bu da esneklik sağlar.
 
-## 📝 Örnek Kullanım
-
-```csharp
-ITranslationService service = new TranslationService();
-
-// İngilizce'den Türkçe'ye
-string result1 = service.Translate("hello world", "English", "Turkish");
-// Çıktı: "merhaba dünya"
-
-// Türkçe'den Arapça'ya
-string result2 = service.Translate("iyi öğretmen", "Turkish", "Arabic");
-// Çıktı: "جيد muallim"
-```
