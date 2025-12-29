@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çoklu Dil Çeviri - Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Çeviri Uygulaması</h1>
+            <p class="subtitle">Sözlük Tabanlı Katmanlı Mimari (Model-Service-UI)</p>
+        </header>
+
+        <main class="translator-grid">
+            <!-- Source Selection -->
+            <div class="card">
+                <div class="select-wrapper">
+                    <select id="cmbFrom">
+                        <option value="Turkish">Türkçe</option>
+                        <option value="English">İngilizce</option>
+                        <option value="Arabic">Arapça</option>
+                    </select>
+                </div>
+                <textarea id="txtInput" placeholder="Çevrilecek metni girin..."></textarea>
+            </div>
+
+            <!-- Target Selection -->
+            <div class="card">
+                <div class="select-wrapper">
+                    <select id="cmbTo">
+                        <option value="English">İngilizce</option>
+                        <option value="Turkish">Türkçe</option>
+                        <option value="Arabic">Arapça</option>
+                    </select>
+                </div>
+                <textarea id="txtOutput" class="output-area" readonly placeholder="Çeviri burada görünecek..."></textarea>
+            </div>
+
+            <!-- Action Button -->
+            <div class="action-bar">
+                <button id="btnTranslate">Çeviri Yap</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
